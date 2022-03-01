@@ -98,7 +98,7 @@ python TSDBReader.py
 In this demo, we create a `sys_load` database using a service where we store the system's CPU Load every 30 seconds. We then create continuous aggregation views of this information as follows:
 - `cpu_load_24h`: Stores the last 24 hours of metrics on a 15 minutes frequency, update every 1 minute.
 - `cpu_load_7d`: Stores the last week of metrics on an hourly frequency, updated every 5 minutes.
-- `cpu_load_30d`: Stores the last 24 hours of metrics on a daily frequency, updated every 5 minutes.
+- `cpu_load_30d`: Stores the last month of metrics on a daily frequency, updated every 5 minutes.
 
 One thing I wanted to achieve in this implementation is having **static** aggregation points of the previous **complete** time buckets while the current incomplete one remains dynamic and being updated. If we take `cpu_load_30d` as an example, we would have static aggregation values for the previous days, and a dynamic aggregation value for the current day, updated with the new data every 5 minutes.
 
